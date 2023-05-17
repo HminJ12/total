@@ -1,0 +1,307 @@
+프로젝트3 ->react 폴더에 calc 폴더 
+전자계산기 만들기
+하나 그냥 계산기
+하나는 D-Day계산기
+다른 하나는 bmi 계산기
+리액트로 만드는 계산기 총 3개
+
+빈폴더에서 뉴터미널 켜서
+creat-react-app .  ->적기 (이 폴더에서 리액트 설치하겠다)
+
+package.json가 중요함
+
+
+src 폴더에서 App.js와 index.js만 남기고 다 삭제한다.
+public폴더에서 index.html만 남기기
+
+index.html에서 이렇게 남기기
+=====================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>React App</title>
+  </head>
+  
+  <body>
+
+    <div id="root"></div>
+
+  </body>
+</html>
+=====================
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+=====================
+index.js에서 이것만 남기기
+
+src에서 만들면 압축이 된다.
+단점은 빌드되고 나서 보면 뭐가 뭔지 알 수 없다.
+
+
+index.js에서 css import를 해준다.
+
+index.html에서 font kit을 적는다.
+font랑
+
+
+overflow-y: auto; ->좌우로 삐져 나가지 않는다.
+
+
+계산기 만들 때는 appContext를 할 일이 없어서
+App.js에서 
+
+
+
+뉴모피즘이 유행
+
+------------------------
+바닐라에서 form에서 onInput이 일어남 
+
+리액트에서는 form에서 onChange만 된다.
+
+
+App.js의 테마변경을 state로 구현
+
+리액트에서 default라는 속성을 쓰면 반영을 안 해준다.
+key를 달고 강제로 갱신하는 방법밖에 없다.
+_theme값이 변할 때마다 바뀌게 해야 한다.
+
+default를 사용하면 화면이 갱신이 안 된다.
+
+key값을 주고 테마가 바뀔 때 증감연산 해야 화면이 갱신된다
+useState를 사용한다.
+
+
+===============
+스크롤바 디자인
+데스크톱 스크롤바 변경하기...
+
+스크롤바 css에서 원하는 스타일을 복사해서 #root 안으로 넣는다.
+style3을 &로 변경한다
+
+@media (hover:none){} 이건 모바일 
+그런데 실제 모바일에서 적용이 안 된다 90%
+
+(구글 모바일 사이즈에서 볼 때)애뮬레이터에서만 적용 가능
+
+ @media (hover:hover){} ->데스크톱에서만 사용하는 거
+
+------------------------
+5월 8일 월요일.
+CompCalc.jsx 작업함
+
+compBackBtn 폴더와 파일을 만든다.
+
+App.js에서 CompBackBtn  import 하기
+
+
+ transform: scale(-1); //뒤집힌다
+
+------------------------
+5월 9일 화요일
+
+뉴모피즘 -> 단색으로 연하게...
+
+CompOutput.jsx 만듦
+
+CompBtnContainer.jsx 만듦
+
+안쪽에서 함수를 사용하는 이유는 state를 변경하거나 자식에게 프롭스로 값을 내려줘야 할 때 안쪽에서 함수를 만든다.
+
+c=>c+'1'
+요즘에는 이렇게 많이 사용한다.
+
+긴 내용의 파일들은 독립적으로 만든다.
+
+splice 배열을 추가, 삭제
+split 배열로 쪼갠다
+slice 글자의 인덱스를 가지고 배열을 축출
+
+중첩조건 네스티드 컨디션
+
+equal이 해야 할 일.
+글자를 수식으로 만들어야 한다.
+글자를 스크립트로 해야하는 명령어
+new Function()
+문자가 함수가 된다.
+
+const fn = function(){alert(1+1)}
+const fn = new Function(`alert(1+1)`)
+문자열을 스크립트 리터럴로 바꾼다.
+문자를 스크립트 리터럴로 바꾼다.
+
+에러가 나도 다른 동작을 해야 한다.
+->예외처리 구문
+에러일 때는 다른 행동을 하도록 한다.
+
+소수점 더할 때 문제가 생김
+
+
+return은 함수가 중지된다.
+
+------------------------
+5월 10일 수요일
+bmi계산기
+
+
+state 관리 한다.
+빽틱은 스크립트에서만 사용 가능하다
+빽틱사용하려면 중괄호 후 사용해야 한다
+
+key 값을 다르게 하기 위해서 true, false를 줬다.
+
+------------------------
+5월 11일 목요일
+리액트 공부하기, 복습 중요!!
+리액트 d-day 계산기는 설명만 듣고 코드는 알아서 쳐야 한다!!
+
+
+form 요소 컨트롤 정리!
+리액트 계산기 프로젝트 수정해야 한다...
+
+form 제어하는 방법
+
+value값을 사용할 때 사용자가 입력하는 거에서는 warning은 나온다.
+개발환경에서만 warning이 나온다.
+
+value값은 선택하는 거에서는 사용할 수 있다.
+입력하는 input에서 사용하면 warning이 뜬다.
+
+
+그래서 defaultValue를 사용한다.
+사용자가 내용을 바꿀 수 있다.
+
+리액트에서 value는 컨트롤이 안 된다.
+그래서 defaultValue를 사용해야 한다!
+
+폼요소의 value속성은 값을 선택할 수 있는 양식에만 적용 가능
+폼요소의 value속성을 값을 변경할 수 있는 양식에 적용하면 uncontrolled 값을 못 바꾸는 상태가 된다.
+그래서 defaultValue를 사용한다.
+
+checked는 따옴표가 아니라 true, false를 넣어야 해서 중괄호 사용해야 한다.
+checked={true}
+
+실시간으로 감지 -> value
+defaultCheck나 defaultValue의 경우 상태 변화를 감지할 수 없음
+defaultCheck나 defaultValue의 경우 상태 변화를 감지하려면 key값을 변경해줘야 한다(리랜더링하기 위해서)
+
+강제로 새로고침을 만들어주는 게 key값을 넣어줘야 한다.
+defaultChecked는 처음 랜더링될 때만 감지돼서 나중에 감지가 안 된다.
+강제로 key값을 바꿔주어서 갱신을 시킨다.
+
+
+
+가급적이면 value를 사용하자(uncontrolled이 되지 않도록 하자)
+
+useEffect -> 가상돔이 실제 돔으로 출력될 때
+
+
+
+
+document.querySelector(`.form1 input[type=radio]:first-child`).checked = true
+->
+document.querySelector(`.form1 input[type=radio]`).checked = true
+이렇게 써도 된다. querySelector는 첫번째만 찾으니까 가능.
+
+주로 form 안에서 onSubmit을 한다. 폼 안에 있는 버튼에 onClick 대신에.
+
+
+form2는 state로 관리한다.
+
+랜더링을 한다.
+
+key도 state로 받아야 한다.
+변수에 의해서 dom구조가 바뀌려면 
+
+리액트에서 그냥 value를 이용하려면 반드시 함수 하나를 걸어야 한다.
+함수를 이용해서 사용자가 내용을 바꿀 수 있도록 만들어졌다.
+state를 만들어서 사용한다.
+
+이벤트 함수 바인딩을 같이 사용해야 value를 사용할 수 있다
+이벤트는 함수를 이용해서 value를 강제로 바꿔주는 역할을 한다.
+(리액트에서 onInput...)
+
+
+checked도 사용하려면 이벤트 함수를 바인딩해야 한다.
+state를 사용해서 값을 바꿔야 한다.
+
+배열이나 객체가 많을 경우 밖에서 함수를 만들어서 가져온다.
+
+
+state는 사이트 접속하는 그 순간만 실행
+
+그 밑에 함수는 업데이트될 때마다 실행
+
+
+------------------------
+5월 12일 금요일 
+
+value값에 빈따옴표가 있어야 placeholder 나온다.
+]placeholder는 "" 빈따옴표가 있어야 나온다.
+
+
+value={_cm} -> value={_cm||''}
+
+성별, 신장, 몸무게
+
+외부파일을 사용하려면
+import 아니면 require해야 한다.
+
+
+
+bmi가 남자는 40, 여자는 45
+범위가 있다
+
+남자 bmi 범위
+20~40경우
+20(비율 0)이 나오면 0
+30 (비율 0.5)나오면 90 
+40 (비율 1)나오면 180
+
+특정값을 다른 값으로 바꾸어야 할 때.
+
+
+여자 bmi 범위
+30~50경우
+30(비율 0)이 나오면 0
+40 (비율 0.5)나오면 90 
+50 (비율 1)나오면 180
+
+비율 공식
+
+
+_setActive('') -> false
+_setActive(' ') ->true (여백이 들어가면)
+
+
+플러그인 사용할 때 npm이 제공되는지 확인해봐야 한다
+안 되면 어쩔 수 없이 스크립트로 연결해야 한다.
+그대신 퍼블릭 폴더에 넣어야 한다.
+
+
+범위 : (bmi-min)/(max-min) -> 값/범위
+0미만이나 1을 초과할 수 없다 ( 이항식, 삼항식 사용)
+
+
+각도 구하기
+각도 대입값 
+비율 * 적용할 범위
+
+------------------------
+5월 15일 월요일
+프로젝트 소스는 공유하지 말 것.
+
+5월 16일 화요일
+Dday 계산기 만들기
+
+js에서 함수만들고 호출하기
+CompTime
+
+
+
+
+
+

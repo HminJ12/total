@@ -1,0 +1,98 @@
+jquery cdn---------------------------------------------------------
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+
+
+나눔고딕 ----------------------------------------------------
+링크에서
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+
+css에서
+font-family: 'Nanum Gothic', sans-serif;
+
+노토산스 ----------------------------------------------------
+head link로
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+css에서
+font-family: 'Noto Sans KR', sans-serif;
+
+
+Montserrat (영어폰트) --------------------------------------
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+font-family: 'Montserrat', sans-serif;
+
+Nanum Myeongjo(나눔명조) -----------------------------------
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+
+font-family: 'Nanum Myeongjo', serif;
+
+
+
+fontawesome kit -------------------------------------------
+<script src="https://kit.fontawesome.com/eef58f469c.js" crossorigin="anonymous"></script>
+
+
+font awesome 가상엘리먼트-------------------------------
+
+content: "\f007";
+display: inline-block;
+font-style: normal;
+font-variant: normal;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+font-family: "Font Awesome 5 Free"; 
+font-weight: 900; 
+
+
+
+모바일 검사-------------------------------
+window.isMobile = false; 
+var filter = "win16|win32|win64|mac";
+if (navigator.platform) {
+    isMobile = filter.indexOf(navigator.platform.toLowerCase()) < 0;
+}
+
+
+ios 검사---------------------
+
+window.isIOS =false
+if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+  isIOS = true
+} // iOS 아이폰, 아이패드, 아이팟
+
+안드로이드 검사---------------
+
+window.isAndroid = false
+if( /Android/i.test(navigator.userAgent)) {
+  isAndroid = true
+} // 안드로이드
+
+
+
+
+
+유튜브 소스-----------------------
+https://img.youtube.com/vi/유튜브ID/default.jpg
+
+
+sass 설치 후 사용---------------------
+
+vscode에서 setting들어가서 setting.json 아이콘 누르기
+setting.json파일 추가
+"liveSassCompile.settings.autoprefix": null
+
+
+
+json파일에 붙여넣기 하기 (사스 글자크기 줄이는 거)
+ "[Log]": {
+
+     "editor.fontSize": 18
+
+ },
+
+
+전자계산기 Orbitron font-----------------------
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+font-family: 'Orbitron';

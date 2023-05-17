@@ -1,0 +1,26 @@
+/* 사이트마다 달라지는 것 */
+
+body{
+  color: #666;
+  font-family: 'Montserrat','Noto Sans KR', sans-serif; /* 영어폰트 먼저 쓰기, 글꼴 2개 설정 */
+  text-decoration: none; /* a 태그 같은 자동 밑줄 */
+  font-weight: normal; /* i,b 두껍게  나오는 거 */
+  font-style: normal;
+}
+/* 폰트는 웹폰트 사용해야 함 */
+
+.serif{
+  font-family: 'Nanum Myeongjo', serif;
+}
+/* 명조체 쓰고 싶을 때 class 만들어서 사용할 것 */
+
+:root{
+  --main-color:#9b8c7d;
+} 
+/* :root html과 같은 객체, 스코프, 
+root가 가장 상위 객체여서 안의 객체들이 변수를 사용하기 위해
+--변수, 색깔에 많이 사용함, 테마색 */
+
+h1{
+  color:var(--main-color);
+}

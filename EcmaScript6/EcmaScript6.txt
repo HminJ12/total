@@ -1,0 +1,885 @@
+EcmaScript6 
+애크마 스크립트 
+표준 문법
+->바닐라 스크립트
+
+애크마 스크립트 
+6버전 이용
+es6
+
+onclick="" 속성 
+자바스크립트의 함수 호출하는 것
+onclick 속성으로 스크립트를 호출한다
+
+<button onclick="alert()">버튼</button>
+
+<button onclick="fn1()">버튼</button>
+
+<button onclick="fn1('안녕하세요')">버튼</button>
+밖에가 쌍따옴표면 안에는 따옴표
+밖이 따옴표면 안에는 쌍따옴표
+
+
+
+<button onclick="fn1_2(event)">버튼</button>
+onclick 속성에서는 무조건 event라고 써야 한다!!
+
+
+function fn1_2(event){
+  console.log(event.target);
+}
+//(event.target)이 this임
+//onclick에서 event는 약속된 파라미터이다
+//event는 이벤트리스너이다
+
+동기화로 바로 실행됐다.
+
+
+html 속성인 onclick으로 사용해 스크립트를 호출한다.
+
+
+document.addEventListener(`DOMContentLoaded`,function(){
+  
+})
+->ready 이벤트이다.
+
+addEventListener -> 이벤트
+`DOMContentLoaded`->엘리먼트를 파악, 파싱하는 거
+
+img, vedio  다운로드 받으면서 문서 해석을 함
+화면 출력할 때 깨져서 나올 수 있다.
+
+
+querySelector
+쿼리 문법
+
+함수 카멜 케이스
+이벤트는 전부 소문자
+
+포와 배열
+배열과 반복문
+
+querySelectorAll 여러개 찾는 거(배열을 이해해야 사용할 수 있다)
+
+배열, 객체, 반복문, 비동기 문법은 반드시 알아야 한다!!
+
+.addEventListener
+하나씩만 사용할 수 있다
+
+
+ onclick속성 (비동기 스크립트 호출이 필요 없음, 반복적인 호출을 요구함)
+      <xmp> 
+        <button onclick="fn1_1('안녕하세요')">버튼</button>
+      </xmp> <!-- xmp는 실제로 사용하면 안 됨 -->
+    </li>
+    <li>
+      DOM parsing event 
+      <xmp>
+        //렌더링 시작 시점 (파싱이 끝나는 시점)
+        document.addEventListener(`DOMContentLoaded`,function(){
+        })
+        //소스가 로딩이 완료된 시점
+        window.addEventListener(`load`,function(){
+        })
+      </xmp>
+    </li>
+    <li>
+      선택자
+      <xmp>
+        getElementsById(`아이디이름`) : 객체 하나를 선택, 이벤트 바인딩 가능(addEventListener)
+        getElementsByClassName(`클래스이름`) : 배열로 선택
+        getElementsByTagName(`태그이름`) : 배열로 선택
+        querySelector(`css선택자`) : 첫번째 요소 하나를 선택, 이벤트 바인딩 가능(addEventListener)
+        querySelectorAll(`css선택자`) : 배열로 선택
+
+
+
+document.querySelector(`.ex2btn`).addEventListener(`click`,function(e){
+          console.log(e.target);
+        })
+
+function(e)여기서 e는 이벤트리스너이다
+
+이벤트리스너.target ->제이쿼리의 this이다
+
+
+defer 연기하다 지연시키다
+병렬처리
+스크립트 만나면 병렬
+요즘은 같이 진행됨
+
+예전에는 직렬방식
+
+읽는 거와 실행은 다른 거
+
+html 다 읽으면(문서 파싱) 스크립트 실행한다
+
+스크립트 안에 속성 defer를 쓰면 병렬처리를 함
+스크립트에 다큐먼트 레디 펑션을 쓸 필요가 없다!
+
+비동기는 실행을 나중에 해라. (기다렸다 실행)
+defer 병렬처리(동시에 읽으면서 html 끝나고 실행하는 거)
+
+defer를 쓸 거면 defer만 써라.
+비동기 load사용할 거면 load만 사용해라.
+섞어 사용하면 안 된다!!
+
+수업 때는 바닐라 할 때 defer만 사용하기로 함
+
+var 변수의 범위 지정하는 목표임
+
+scope
+
+호이스팅
+console.log(a);
+var a = 1
+
+->실행할 때 자기 마음대로 변경함
+var a
+console.log(a);
+a = 1
+
+호이스팅
+변수나 함수를 첫 순위로 이동시킴
+
+var는 호이스팅이 일어난다.
+자기 알아서 옮겨서 스크립트를 실행해서 발생하는 문제
+
+
+var는 다중선언하면 
+에러가 나야 하는데 안 난다.
+
+
+순서를 반드시 지키도록 만든 것
+let
+const 상수 값을 바꿀 수 없다
+	
+let과 const의 차이
+let은 중복선언이 안 됨
+값은 바꿀 수 있다.
+
+const는 중복도 안 되고 값도 바꿀 수 없다
+주로 초기값에 많이 사용한다
+
+
+
+초기화할 때 많이 사용 const는 
+
+const는 빈 변수를 만들 수 없다
+무조건 초기값을 넣어야 한다!
+
+
+var의 문제점
+함수레벨 스코프
+호이스팅 :변수나 함수를 첫 순위로 이동시킴
+동일한 이름의 변수의 중복선언이 가능
+
+let
+block레벨 스코프
+호이스팅이 발생하지 않는다 (호이스팅의 발생 여부)
+동일한 이름의 변수의 중복선언이 불가능
+
+const
+block레벨 스코프
+호이스팅이 발생하지 않는다
+동일한 이름의 변수를 중복선언이 불가능하며 값을 변경할 수 없음, 단 객체의 키값은 수정 가능
+선언시 반드시 초기값을 입력
+
+
+함수 안에 없으면 상위에서 찾는다(스코프, 범위)
+가까운 변수를 먼저 찾는다 ->클로저
+
+
+var는 function(함수) 기준이다 함수 레벨 scope
+let은 {}중괄호 기준이다 block 레벨 scope
+
+
+const 객체 키값은 변경 가능
+
+
+  /* 
+  function fn(){
+    
+  }
+  */
+
+  let fn = function(){
+
+  }
+
+
+
+
+
+let fn = function(){
+    
+  }
+
+->
+
+let fn = () => {
+    
+  }
+
+function() 
+() => 
+
+
+
+
+/* let fn = (param) => {
+    return ++param
+  }
+  
+  document.querySelector(`.ex1 button`).addEventListener(`click`,(e)=>{
+    fn()
+  }) */
+
+
+변수가 하나일 경우 ()랑 {} 생략 가능
+
+
+let fn = param => ++param
+  document.querySelector(`.ex1 button`).addEventListener(`click`, e => {
+    fn(e.target.value)
+  })
+
+e.target.value -> $(this).val() 
+
+--------------------------------------
+addEventListener 이벤트
+이벤트 뒤에는 콜백함수
+
+스크립트를 읽는 거 -> 생각하는 거
+읽을 때는 에러 걱정할 필요 없다.
+문제는 실행하면 에러나는 거
+
+리딩할 때 생각하는 것 에러 안 난다
+
+이벤트 바인딩 바로 일어난다.
+
+파싱이 끝나면 실행
+
+defer를 사용하는 이유
+1.직렬 처리할 때 문제 파싱이 다 될 때까지 빈 화면만 봐야 함
+2.밑에 두면 불필요한 것까지 나와서 문제가 생길 수 있다
+
+최소화해서 문제를 줄이는 게 defer임
+병렬 방식
+시작과 동시에 읽음
+
+화면의 문제를 최소화하는 것
+
+defer와 ready  결과는 별 차이가 없으나 다른 것임
+
+직렬과 병렬의 차이
+화면에 출력되는 렌더링 문제를 최소화하기 위해서 나온 방식
+
+
+.innerHTML
+태그까지 다 가져옴
+
+.innerTEXT
+텍스트만 가져옴
+
+e.target.innerHTML  
+-> $(this).html()
+값을 가져오는 것
+
+e.target.innerText='abc'
+-> $(this).text(`abc`)
+값을 바꾸는 것
+
+
+e.target -> 이벤트를 직접 받는 객체
+
+자식이 있고 없고에 따라 달라진다.
+가장 안쪽에 있는 객체를 말한다.
+
+자식이 중첩된 구조에는 e.currentTarget을 사용해야 한다.
+
+currentTarget ->  $(this) 클릭한 선택자
+target -> 복잡함, 어디를 누르냐에 따라 달라진다.
+
+
+event.currentTarget : 이벤트 바인딩이 된 엘리먼트를 호출
+event.target : nested 구조로 된 엘리먼트일 경우 이벤트 위치에 존재하는 최하위 요소를 호출
+
+
+nested 구조에서 
+
+캡처링
+할일을 알아내는 거
+부모가 먼저 받는다
+
+일이 시작되는 순서는 최하위 자식부터 시작함
+버블링 -> 일을 하는 순서
+
+이벤트를 감지하고 이벤트를 실행하는 순서
+
+이벤트를 감지하는 것 -> 캡처링
+위에서 아래로 전달 (부모-> 자식)
+
+이벤트를 실행하는 것 -> 버블링
+콜백함수를 실행하는 순서 (자식 -> 부모)
+
+
+e.preventDefault() 
+원래 기능을 막는 것
+
+e.stopPropagation()
+부모의 행동을 막는 것
+부모의 버블링을 중지하는 것
+
+
+
+event와 forEach
+
+이벤트는 하나밖에 못준다.
+
+
+document.querySelectorAll(`.ex1 button`).forEach(()=>{
+    
+  })
+
+.forEach(()=>{
+    
+  }) 
+forEach 이벤트가 아니고 반복문이다.
+
+.forEach((v)=>{
+    
+  }) 
+
+(v) -> 파라미터
+v 이름 바꿔도 됨
+
+여러개를 동시에 찾아야할 때 forEach를 사용해야 한다!!
+아무때나 forEach를 사용하면 안 된다.
+
+
+$(this).val()
+-> v.value
+
+해당 요소 v의 자식이 없는 경우 
+-> v.target.value로 사용 가능
+
+.innerText = sum
+
+
+함수 만들 때 공식
+let fn = () => {
+    
+  }
+--------------------------------------
+for 주로 배열과 함께 사용한다.
+
+document.querySelector(`.ex1 button`).addEventListener(`click`,e=>{
+    
+  })
+
+.append( ) 안에 <br> 줄내림 넣으면 제이쿼리에서는 되는데 바닐라는 안된다.
+
+바닐라에서는 
+let br = document.createElement(`br`) br태그 만들고 싶다.
+
+
+for( ){ }
+( ) 시작과 끝을 정해준다.
+
+(let let i = 1; i < 5; i++) 변수 씀
+
+무한반복 될 때는 강제로 닫아야 함 브라우저를
+
+
+무한반복하면 안 된다.
+
+
+-- 감소가 나오면 앞쪽에 있는 숫자가 커지고 >부등호가 커지고
+++ 증가가 나오면 뒤쪽에 있는 숫자가 커지고 <부등호가 작아진다.
+
+
+
+
+{
+  document.querySelector(`.ex1 button`).addEventListener(`click`,e=>{
+    document.querySelector(`.ex1 .output`).innerHTML=''
+    //비워 놓는다.
+    for(let i = 1; i <= 10; i++){
+      document.querySelector(`.ex1 .output`).append(i)
+      var br = document.createElement(`br`)
+      document.querySelector(`.ex1 .output`).append(br)
+    }
+  })
+}
+
+{
+  document.querySelector(`.ex2 button`).addEventListener(`click`,e=>{
+    document.querySelector(`.ex2 .output`).innerHTML=''
+    let sum = 0
+    for(let i = 1; i <=10; i++){
+      sum += i
+    }
+    document.querySelector(`.ex2 .output`).innerText=sum
+  })
+}
+
+
+
+if문은 똑같음(조건문)
+
+객체를 만든다 
+createElement
+
+img.setAttribute('src','./img/img1.jpg')
+
+img.setAttribute('src',`./img/img${i}.jpg`)
+
+setAttribute 속성값을 변하게 하겠다. 바꾸겠다
+->제이쿼리에서는 attr('src','./img/img1.jpg')
+파라미터 2개
+자바스크립트는 얘를 호출하는 파일 기준 index.html기준으로 경로 작성!!
+
+css는 자기 파일 위치 기준이다!!
+
+
+getAttribute('src') src 속성값을 가져오겠다. 알아내는 거
+->제이쿼리에서 attr('src')
+파라미터 1개
+
+--------------------------------------
+2의 5승 구하는 코드
+
+2 ** 5 
+** 승 값을 구하는 거
+
+Math.pow(2, 5)
+
+
+
+AI는 이전에 만들어 놓은 걸 학습한 것
+구글, 인터넷 
+모든 데이터 -> 인터넷에서 가져오는 것
+흉내를 내지 못하는 것은 창의성이다.
+창의적인 애들이 나중에 각광...
+이미지를 독창적으로 만드는 사람들..
+
+1.창의성을 갖춰야 한다. 창의성이 중요하다.
+새로운 언어에 대해서 해석하는 사람이 중요?
+2.새로운 것에 대한 관심이 필요함.
+
+3.재해석하는 사람이 반드시 필요하다.
+읽고 쓰기를 잘해야 한다..
+AI를 잘 활용할 수 있는 코더들이 앞으로 살아남게 될 것이다.
+
+
+윈도우 키 + .  
+이모지 단축키
+
+줄이 i로 생각하기
+
+for구문 사용할 때 
+패턴을 파악해서 찾는 게 중요하다!!
+
+
+하드코딩을 원시적인 코딩이라고 한다.
+반복문 이용하기
+
+태그 만들 때 사용한다.
+
+
+.innerHTML=
+innerHTML은 그 안에 있는 내용 다 지워진다.
+그래서 table은 append를 한 거다.
+위의 내용 살리고 만든다.
+
+append 추가하다 
+내용을 살리고 추가한다.
+
+innerHTML 내용 다 지우고 대체한다.
+
+append, innerHTML 구분해서 써야 한다!!
+
+
+th.classList.add(`green`)  ->제이쿼리에서 addClass이다!
+
+td.setAttribute(`colspan`,1) -> attr 속성 사용
+
+--------------------------------------
+반복할 때 append 사용함
+
+for구문 안에서는 append를 사용한다.
+
+한번만 사용할 경우 innerHTML을 사용한다.
+
+
+배열
+
+let arr = ['가','나','다']
+  console.log(arr[3]);
+
+0이 가
+1이 나
+2이 다
+3이 undefined
+
+0부터 찾음 
+
+console.log(arr.length);
+
+length 배열의 갯수, 길이
+1부터 찾음
+
+
+ arr.push('라')
+push는 뒤에 추가
+
+arr.unshift('A')
+unshift는 앞에  추가
+
+arr.pop()
+배열 뒤쪽 삭제
+
+arr.shift()
+배열 앞쪽 삭제
+
+인덱스는 숫자
+
+[ ] 대괄호는 배열을 말한다.
+
+index는 0 
+length는 1이다
+
+글자수대로 쪼갠다
+let arr = str.split('') 
+
+
+let str = '010-2329-7308'일 경우,
+let arr = str.split('-') 
+쪼갤 수 있는 구분 기호
+- 기준으로 쪼갠다
+
+
+let arr = str.split(' ') 
+여백도 기준으로 쪼갤 수 있다.
+
+split 글자를 배열로 전환
+
+arr.join('-') 배열을 글자로 전환
+
+--------------------------------------
+.trim()
+문자열의 앞뒤에 사용한다
+
+
+disabled="true"
+버튼에서 쓰는 속성 
+기능을 사용하지 않는다.
+
+disabled 자체가 true이다..
+
+비활성화는 가능한데 활성화가 불가능하다.
+
+
+form 안에 자동으로 클릭하면 submit이 발생해서 새로고침이 발생한다.
+엔터를 눌러도 새로고침이 발생한다.
+
+submit 이벤트는 오로지 form에서만 작용한다.
+
+
+배열, 객체 통째로 출력이 불가하다!!
+
+배열을 값으로 찍으면 안 되고 문자열로 전환해서 값을 출력해야 한다!!
+
+--------------------------------------
+객체
+
+정보 누적하려면 배열이 필요하다
+명단 추가할 때마다 배열을 추가한다
+
+클릭할 때마다 배열이 들어가야 한다
+[] 배열
+{} 객체 ->하나의 값에 여러개를 넣을 수 있다
+
+arr[1][0] ->가독성이 떨어진다, 숫자만 쓰면 뭘 가르키는지 모르기 때문에
+arr[1].이름 -> 키이름을 알고 있으니 편하다
+
+배열[값을 구하고 싶은 해당객체index].객체안의 키이름
+
+배열은 값을 계속 누적시키려고
+객체는 그안에서 정보를 효율적으로 찾기 위해서 사용.
+
+배열 안에 객체를 집어 넣어서 사용한다
+가독성이 좋고 문법 작성이 편해서 사용한다
+
+배열을 계속 추가해야 하기 때문에 밖에서 배열 초기값을 만든다.
+
+객체 안에는 키이름으로 숫자도 가능하다
+
+
+--------------------------------------
+객체는 for구문으로 돌릴 수 없다...
+객체를 배열로 바꾸면 알 수 있다!!
+
+객체를 배열로 전환해서 사용할 때는 객체가 너무 방대할 때 사용한다
+
+
+내장객체 ->내가 만든 게 아니고 미리 만들어져 있는 것!
+Math
+Object
+
+내장객체 안의 내장함수
+내장함수 = 메소드라고 한다!
+
+window.alert
+
+객체는 창고라고 생각하면 쉽다.
+
+Object.entries()
+entries()는 배열로 바꿔주는 것
+객체 키값이 몇개인지 알고 싶을 때 사용한다!
+객체의 길이를 알아내고 싶을 때 사용한다!!
+객체에 length를 사용하고 싶을 때
+
+
+배열의 순환과 정렬
+<굉장히 중요!>
+
+arr.indexOf('나')
+
+indexOf는 객체는 못 찾는다
+
+arr.findIndex(()=>{
+      
+    })
+
+
+--------------------------------------
+indexOf 배열의 번호를 찾는다.
+arr.indexOf('aa')
+
+
+  let idx = arr.findIndex((v)=>{
+      return v%2===0
+    })
+
+let idx = arr.findIndex(v => v%2===0)
+
+특정 조건을 대입한다.
+
+
+arr.find(v=>v.나이==='3')
+해당하는 객체 하나를 return하고 끝난다
+
+알아서 배열은 따로 정리하기!!
+
+
+--------------------------------------
+구조분해할당 
+
+전개연산자
+
+배열과 객체는 불변객체임 (immutable)
+굉장히 중요하다!
+
+배열은 독립적인 아이들이다.
+배열 내용이 똑같아도 다르게 간주한다
+
+이름이 2개가 된다
+
+배열을 copy하려면 
+
+    arr.forEach(v=>{
+      arrCopy.push(v)
+    }) 
+    //배열의 오리지널 복사 방법 
+   
+let arrCopy = [...arr]
+->복제방법
+
+전개연산자는 객체나 배열 복사하려고 사용
+구조분해를 하는 이유는 변수 만들려고 사용
+
+
+
+map filter
+배열을 새로 하는 게 목적이다!
+특정 배열을 이용해서 다른 배열 값으로 바꿀 때, 필요로 할 때 사용한다!
+새로운 배열을 return한다
+
+map 
+원래 배열과 같은 배열의 길이가 나온다.
+
+filter
+원래 배열과 다른 배열의 길이가 나온다.
+걸러낸다, 원하는 배열 값만 가져온다?..
+
+
+forEach는 내가 원하는 만큼 돌리는 거..
+
+
+let arrEven = arr.filter(v=>{
+      return v%2 === 0
+    }) 
+
+//filter는 무조건 조건식이 나온다 */
+
+식을 줄이면 {}중괄호와 return이 빠진다. 
+(파라미터가 하나이면서 식도 한 줄로 사용할 수 있을 때 이렇게 더 줄인다)
+let arrEven = arr.filter(v=>v%2 === 0)
+
+------------------------------------------------
+    let arr2x = arr.map(v=>{
+      return v*2
+    }) 
+
+->식을 줄이면
+let arr2x = arr.map(v=>v*2)
+      
+
+map과 filter return으로 준 후에 값을 받아야 해서 let 변수를 만든다.
+
+
+------------------------------------------------
+원본 배열은 안 건드리는 것이 원칙이다!
+
+arrCopy.sort() 
+//순서대로 정렬, 배열을 뒤집는다
+
+sort()는 이렇게 써야 한다! 그냥 외울 것!
+숫자 정렬할 때!
+=================
+ arrCopy.sort((a,b)=>{
+      return a - b
+    })
+
+arrCopy.sort((a,b)=> b - a)
+
+a - b 오름차순 정렬
+b - a 내림차순 정렬
+=================
+영어 정렬할 때!
+=================
+arrCopy.sort((a,b)=>{
+      a = a.toLocaleLowerCase()
+      b = b.toLocaleLowerCase() //소문자로 바꿔서 정렬
+      if(a < b) return -1
+      if(a > b) return 1
+      if(a === b) return 0 //영어 정렬할 때 조건식 3개이다
+    })
+=================
+localStorage
+JSON 데이터 형태
+
+
+웹브라우저 종료 또는 새로고침하면 사라진다.
+ram -> 메모리 저장, 컴퓨터 끄면 기록 사라진다.
+save 하드디스크 저장해야 기록이 남는다.
+
+
+
+하드디스크에 저장하는 방법
+localStorage.setItem('n',1)
+
+하드디스크에서 가져오는 방법
+let n = localStorage.getItem('n')
+
+문자형태로 저장해야 한다!
+
+한번 저장한 후에는 setItem 저장 안 해도 가져올 수 있다.
+
+localStorage에 들어가면 무조건 글자로 저장된다!
+
+
+지우는 거
+localStorage.removeItem('n')
+
+하드디스크에 저장한 내용을 지우게 되면 
+console.log하면 Null값이 출력된다.
+에러가 나오는 건 아니다.
+
+
+
+구글 상태창에서 저장된 내용을 application으로 확인할 수 있다.
+
+localStorage는 영원히 남아 있는 거.
+Session Storage
+새로고침은 데이터가 남음
+대신 웹브라우저를 끄거나 컴퓨터를 끄면 데이터가 사라진다.
+
+
+localStorage 중요하다!!
+//많이 사용함! 사용자 광고 안보기 등등 보안이 중요하지 않는 것들을 주로 사용한다
+
+저장할 때는 JSON으로 바꾸고 가져올 때는 파싱한다
+
+
+
+todoApp, 디데이 만들어서 포트폴리오...
+
+
+sort 정렬할 때
+원본 arr를 건들면 안 된다!
+
+--------------------------------------
+동일한 사이트 간에서 페이지와 페이지 간의 변수를 전달하는 기능
+-> 쿼리스트링
+주소창에 변수를 담아서 다른 페이지에 전달
+
+
+<a href="./detail.html?a=1&b=2&c=3" value=${id}>
+html 뒤에 ?를 쿼리스트링이라고 한다.
+
+
+하나의 값만 필요할 때 find 사용함
+
+
+required가 없으면 유효성 검사가 안 된다
+
+
+중복되지 않는다
+변하지 않는다
+
+--------------------------------------
+객체지향(class), 비동기문법
+
+module
+모듈
+
+내가 필요한 것만 꺼내 쓰는 것을 말한다.
+http 환경에서만 (서버환경에서만) 동작을 한다.
+
+<script defer src="./js/script.js" type="module"></script>
+
+type=module로 사용
+
+defer와 module 같이 사용하지 말 것
+
+export로 내보내줘야 한다.
+export let a = 1
+
+가져오는 거는
+import {a} from './store.js'
+
+필요하면 호출해서 쓰면 된다.
+1. 스크립트 호출할 때 리소스가 절감이 된다.
+2. 스크립트끼리 순서는 맞출 필요가 없다.
+3. 번들러 스크립트 파일을 하나로 합친다. (번들러 압축방식)
+
+import c, {a,b} from './store.js'
+/* 
+import {a,b} from './store.js'
+import c from './store.js' 
+*/
+
+export는 중괄호{ }
+default는 그냥 호출한다.
+
+
+export default는 이름을 안 붙여도 된다.
+파일 하나에서 하나밖에 안 된다.
+
+공유하는 목적 -> 불필요한 걸 안 가져오기 위해서
+
+최신 프레임워크는 모듈방식으로 바뀌었다.
+

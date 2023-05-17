@@ -1,0 +1,12 @@
+https://platform.openai.com 회원가입
+https://platform.openai.com/account/api-keys 생성
+vsCode aiCodeHelper 익스텐션 추가
+vsCode/settings/aicodehelper 검색
+Aicodehelper: Gptkey 입력창에 api-key 입력
+Aicodehelper: Language 옵션에서 korean 입력
+
+Ctrl+Alt+Shift+z 주석달기
+Ctrl+Alt+Shift+r 리팩토링
+Ctrl+Alt+Shift+c 코드리뷰
+Ctrl+Alt+Shift+g 자연어명령->코드
+Ctrl+Alt+Shift+m 개발 이외 일반적인 질문

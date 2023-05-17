@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+  padding: 0;
+  color: inherit; /* 전부 다 상속받는다 
+  agent style이 있는 엘리먼트들 강제로 상속받게 하기 위해서 */
+  text-decoration: inherit;
+  font-weight: inherit; /* text 관련 상속이 되는 애들만 설정한다 */
+  font-style: inherit;
+  
+} 
+/* 존재하는 엘리먼트(태그) 전부 다 */
+
+
+
+li{
+  list-style: none; 
+}
+/* 불릿기호를 없앤다 */
+
+iframe, img, svg, canvas{
+  display: block;
+}
+/* 인라인블럭을 블럭으로 변경 */
+iframe{
+  border: none;
+}
+/* 기본적으로 테두리가 들어가 있어서 없앤다 */
+
+table{
+  border-collapse: collapse;
+} /* 간격을 붙여준다 */

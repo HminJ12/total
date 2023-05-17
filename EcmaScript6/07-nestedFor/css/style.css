@@ -1,0 +1,21 @@
+table{
+  border-collapse: collapse;
+}
+td, th{
+  border: 1px solid #000;
+}
+td, th{
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+th.green{
+  background: greenyellow;
+}
+td.yellow{
+  background: yellow;
+}
+td.orange{
+  background: orange;
+}

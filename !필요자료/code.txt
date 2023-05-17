@@ -1,0 +1,25 @@
+motion script--------------------------
+  var reqID
+  function fn(){
+
+  }
+
+  fn()
+  $(window).scroll(function(){
+    reqID = requestAnimationFrame(fn)
+  }).resize(function(){
+    reqID = requestAnimationFrame(fn)
+  })
+
+
+미디어 쿼리 3분기--------------------------
+@media screen and (min-width:1000px) {
+  
+}
+@media screen and (min-width:500px) and (max-width:1000px) {
+  
+}
+@media screen and (max-width:500px) {
+  
+}
+

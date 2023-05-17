@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <h1>syntax rule</h1>
+    <p>kldp html 유효성(validator)검사를 이용해 확인해 볼 것</p>
+    <section>
+      <h2>문법규칙</h2>
+      <ul>
+        <li>
+          inline요소의 자식으로는 block요소는 허락되지 않는다
+          예외 : a는 (interactive를 제외한) 모든요소의 부모로 허락됨
+        </li>
+        <li>heading요소(h1~h6), p요소의 자식으로는 인라인(인라인, 인라인-블럭)계열만 허락된다</li>
+        <li>interactive요소(폼요소,anchor(a)) 간에는 부모자식관계가 허락되지 않는다(상호작용 요소끼리는 안 된다)</li>
+        <li>figcaption의 자식으로는 a요소가 허락되지 않는다</li>
+        <li>ul, ol의 자식으로는 li만 허락된다</li>
+        <li>li의 자식으로는 모든요소가 허락된다</li>
+        <li>dl의 자식으로는 dt,dd요소만 허락된다</li>
+        <li>style,meta,title요소는 head의 자식요소로만 허락된다</li>
+        <li>img요소는 alt속성을 가져야만 한다</li>
+      </ul>
+    </section>
+    <section>
+      <h2>권장사항</h2>
+      <ul>
+        <li>heading요소는 텍스트를 포함하길 권장</li>
+        <li>h1과 main요소는 웹문서에 한개씩 포함하길 권장</li>
+        <li>main,section,article요소는 heading요소를 한개 이상 포함하길 권장</li>
+        <li>heading요소는 순차적으로 적용하길 권장</li>
+        <li>title값은 page마다 다르게 출력하길 권장</li>
+        <li>WAI-ARIA(접근성)규칙을 준수하길 권장</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

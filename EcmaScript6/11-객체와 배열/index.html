@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="ex1">
+    <p>1. 객체의 생성과 출력</p>
+    <p>이름 : <input class="name" type="text"></p>
+    <p>나이 : <input class="age" type="text"></p>
+    <p>
+      성별 : 
+      <input class="gender" value="남" type="radio" name="ex1">남 
+      <input class="gender" value="여" type="radio" name="ex1">여
+    </p>
+    <p><button class="add">명단추가</button></p>
+    <p><button class="print">명단출력</button></p>
+    <p class="output"></p>
+    <!-- 
+      인원수 3명
+      이름 : 홍길동, 나이 : 24, 성별 : 여
+     -->
+  </div>
+  <hr>
+  <div class="ex2">
+    <button>버튼</button>
+  </div>
+  <hr>
+  <div class="ex3">
+    <p>3. 일정을 추가하시면 일정 목록이 나와요</p>
+    <p>날짜 : <input type="date"></p>
+    <p>시간 : <input type="time"></p>
+    <p>일정명 : <input type="text"></p>
+    <button class="add">일정추가</button>
+    <!--
+      날짜 : 2023-02-23
+      시간 : AM:06:23
+      일정명 : 홍길동과 식사
+      (일정이 추가되었습니다)
+      
+      !할일 
+        투두배열에 일정객체를 추가
+        output에는 객체를 이용해 내용 출력
+    -->
+    <button class="print">일정목록확인</button>
+    <!-- 
+      홍길동과 식사 
+      영화보기
+      공부하기
+
+      !할일
+        투두배열의 길이만큼 for구문으로 반복해서 객체의 일정명을 append
+     -->
+    <button class="del">목록지우기</button>
+    <!-- output 지우기 -->
+    <p class="output"></p>
+  </div>
+  <hr>
+  <div class="ex4">
+    <p>4. 일정을 추가하시면 일정 목록이 나와요</p>
+    <p>날짜 : <input type="date"></p>
+    <p>시간 : <input type="time"></p>
+    <p>일정명 : <input type="text"></p>
+    <button class="add">일정추가</button>
+    <!--
+      날짜 : 2023-02-23
+      시간 : AM:06:23
+      일정명 : 홍길동과 식사
+      (일정이 추가되었습니다)
+      
+      !할일 
+        투두배열에 일정객체를 추가
+        output에는 객체를 이용해 내용 출력
+    -->
+    <button class="print">일정목록확인</button>
+    <!-- 
+      홍길동과 식사 
+      영화보기
+      공부하기
+
+      !할일
+        투두배열의 길이만큼 for구문으로 반복해서 객체의 일정명을 append
+     -->
+    <button class="delete">목록지우기</button>
+    <!-- output 지우기 -->
+    <p class="output"></p>
+  </div>
+  <hr>
+  <div class="ex5">
+    <p>5. 객체를 배열로 전환</p>
+    <pre>
+      {
+        1:'one',
+        2:'two',
+        3:'three'
+      }
+    </pre>
+    <button>버튼</button>
+    <p class="output"></p>
+  </div>
+</body>
+</html>

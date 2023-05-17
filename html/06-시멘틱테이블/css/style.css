@@ -1,0 +1,49 @@
+table{
+  border-collapse: collapse;
+}
+td,th{
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.table1{
+  margin: 0 auto;
+}
+.table1 td, .table1 th{
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  /* font-weight: normal; */
+  /* vertical-align: middle; */
+}
+.table1 thead th{
+  background: black;
+  color: red;
+}
+.table1 tbody th{
+  background: rgb(155, 155, 155);
+}
+
+
+.table2{
+  margin: 0 auto;
+}
+
+.table2 th{
+  background: #EEE;
+}
+.table2 th[scope='rowgroup']{
+  background: #5c5a5a;
+}
+
+.table2 tr > *{
+  height: 40px;
+  text-align: center;
+}
+.table2 td:first-child{
+  width: 70px;
+}
+
+.table2 td{
+  width: 100px;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <h1>이벤트</h1>
+  <ul>
+    <li>
+      onclick속성 (장:비동기 스크립트 호출이 필요 없음, 단:반복적인 호출을 요구함, 이벤트리스너를 호출시 event예약어를 사용)
+      <xmp> 
+        <button onclick="fn1_1('안녕하세요')">버튼</button>
+      </xmp> <!-- xmp는 실제로 사용하면 안 됨 -->
+    </li>
+    <li>
+      DOM parsing event 
+      <xmp>
+        //렌더링 시작 시점 (파싱이 끝나는 시점)
+        document.addEventListener(`DOMContentLoaded`,function(){
+        })
+        //소스가 로딩이 완료된 시점
+        window.addEventListener(`load`,function(){
+        })
+      </xmp>
+    </li>
+    <li>
+      선택자
+      <xmp>
+        getElementsById(`아이디이름`) : 객체 하나를 선택, 이벤트 바인딩 가능(addEventListener)
+        getElementsByClassName(`클래스이름`) : 배열로 선택
+        getElementsByTagName(`태그이름`) : 배열로 선택
+        querySelector(`css선택자`) : 첫번째 요소 하나를 선택, 이벤트 바인딩 가능(addEventListener)
+        querySelectorAll(`css선택자`) : 배열로 선택
+      </xmp>
+    </li>
+    <li>
+      이벤트리스너.target
+      <xmp>
+        document.querySelector(`.ex2btn`).addEventListener(`click`,function(e){
+          console.log(e.target);
+        })
+      </xmp>
+    </li>
+  </ul>
+
+  <hr>
+  <div class="ex1">
+    <button onclick="fn1_1('안녕하세요')">버튼</button>
+    <button onclick="fn1_2(event)">버튼</button>
+  </div>
+  <hr>
+  <div class="ex2">
+    <button>버튼</button>
+    <button id="ex2btn">버튼</button>
+    <button class="ex2btn">버튼</button>
+  </div>
+</body>
+</html>

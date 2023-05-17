@@ -1,0 +1,723 @@
+html 글짓기, 컴퓨터가 얼마나 이해를 잘할 수 있게 만드냐.
+태그가 다 존재하지 않는다.
+emmet 기능 ! 자동 완성
+DOCTYPE - html5 DTD를 선언
+
+head 문서의 성격을 규정, 눈에 안 보임, 
+body 출력되는 내용, 눈에 보이는 거 
+
+meta 태그  charset 속성 
+전체는 요소 element
+utf-8 유니코드 
+
+<meta charset="UTF-8"> 전세계 통합 유니코드 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 반응형 설정
+
+꼭 있어야 하는 문법, 씬택스syntax, title
+ html 의미와 기능
+시맨틱 의미론적인 의미
+
+태그로 감싸는 행위(마크업). 요소로 만들었다. 요소 하나의 마크업
+h1 대제목, 제목이란 의미, 무조건 넣어라(의미론 때문에)
+ 중요도에 따라 사용할 수 있다
+
+시멘틱 - 컴퓨터가 이해할 수 있는
+DOM - 문서 구조
+시멘틱 마크업 언어 - 현실적으로 어렵다, 컴퓨터가 이해를 잘한다. 기본, 개념은 지켜줘야 한다.(문법)
+
+드래그 후 Alt, w 누르기 태그 만들 때
+abbr 약어 태그
+
+컴퓨터가 이해를 잘할 수 있도록 하는 것.
+
+https://developer.mozilla.org/ko/docs/Web/HTML/Element
+(html 요소 참고서)
+
+중요!
+syntax : 웹표준, semantic : 의미, accesbility : 접근성
+
+main 가장 중요한 구역
+section  세부 내역으로 분할, 내용별로 분할 (접근성 때문에 사용해야 함)
+
+
+
+html문서의 특징
+목록 
+요소 element 범위가 있는 것
+태그 네임 
+속성은 태그의 기능과 의미가 달라진다.
+Node 계층구조 (족보를 말한다)
+자식(children) Node, 자손(decendent) Node    자식에는 자손이 들어간다
+부모 Node 
+위에는 다 부모 Node 
+siblings (동급) Node   영어로 외우기 중요!
+  
+<hr>
+<section>
+      <h2>html문서의 특징</h2>
+      <ul>
+        <li>요소(element), 태그(tag), 속성(attribute)이 존재한다</li>
+        <li>Node(parent, children, decendent, siblings)가 존재한다</li>
+        <li>Node는 정해진 구조를 준수해야 한다</li>
+      </ul>
+</section>
+<hr>    
+
+
+웹표준은 Node 준수와 속성을 잘 지켜야 한다.
+<hr> 구분선, 밑줄
+
+----------------------------
+시멘틱요소
+
+범위를 잡을 때 사용하는 영역 - 구획
+
+main : 웹문서의 주요내용을 포함, 본문이 들어간다
+section,article : 제목과 내용을 포함하는 주제를 출력하는 영역이다
+영역을 계속 쪼개준다
+header : 사이트의 정체성을 출력하는 영역
+footer : 사이트의 보조적인 정보를 출력하는 영역
+aside : 사이트의 부수적인 정보를 출력하는 영역, 광고, 사이드바에 만들 때  기능 부분
+nav : 메뉴기능을 제공하는 영역
+div : 레이아웃 영역, 아무 의미 없는 구역을 나누기위한.
+
+<section>
+      <h2>시멘틱요소</h2>
+      <article>
+        <h3>구획요소</h3>
+        <ul>
+          <li>main : 웹문서의 주요내용</li>
+          <li>section,article : 제목과 내용을 포함하는 주제를 출력하는 영역</li>
+          <li>header : 사이트의 정체성을 출력하는 영역</li>
+          <li>footer : 사이트의 보조적인 정보를 출력하는 영역</li>
+          <li>aside : 사이트의 부수적인 정보를 출력하는 영역</li>
+          <li>nav : 메뉴기능을 제공하는 영역</li>
+          <li>div : 레이아웃 영역</li>
+        </ul>
+      </article>
+      <article>
+        <h3>다양한 논리(뜻이 있는) 요소</h3> 의미를 담고 있다.
+        <ul>
+          <li>em : 중요함</li>
+          <li>strong, mark : 강조</li>
+          <li>small : 보조적의미</li>
+          <li>i : 구분, 다름의 목적 </li>
+          <li>blockquote : 인용</li>
+          <li>cite : 인용처</li>
+          <li>time : 시간표시</li>
+          <li>address : 주소, 전화 등..</li>
+          <li>span : 의미가 없음</li>
+          <li>abbr : 약어</li> 주제에 맞게 사용하기
+          <li>dfn : 용어</li> 주제에 맞게 사용하기
+        </ul>
+      </article>
+      <article>
+        <h3>물리적 요소</h3>
+        <ul>
+          <li>b : 두꺼운글자</li>
+          <li>u : 밑줄</li>
+          <li>strike : 취소선</li>
+          <li>sup : 윗첨자</li>
+          <li>sub : 아래첨자</li>
+        </ul>
+      </article>
+    </section>
+    <hr>
+    <section>
+      <h2>escaping 문자</h2>
+      <p>마크업에서 허락되지 않는 문자를 표기하는 유니코드</p>
+      <ul>
+        <li>
+          &lt; 
+        </li>
+        <li>
+          &gt;
+        </li>
+        <li>
+          &amp;
+        </li>
+      </ul>
+    </section>
+
+em과 strong의 차이
+em 의미론적으로 중요
+strong 시각적인, 청각적인 강조 목적
+mark 형광펜, 강조
+i : 구분 혹은 다름의 목적
+cite : 인용처, 출처
+span : 의미가 없음, 태그로 확장 주로 디자인 때문에 사용
+
+눈에 보이게, 시각적으로 변화를 주는 것 - 물리적 요소
+물리적 요소인 태그는 가급적 쓰지 말고 css로 사용할 것
+예전 css가 없을 때 사용했던 것. (b, u, strike는 거의 사용 안 함. 절대 사용하지 말 것)
+
+escaping할 때 항상 먼저 &가 나와야 한다.
+
+----------------------------
+anchor 요소
+링크기능 
+하이퍼링크를 구현
+사용 목적 - hyper link 기능 구현
+
+태그마다 고유속성도 있고 같이 사용할 수 있는 속성도 있다.
+anchor의 고유 속성
+1. href - anchor의 고유 속성
+하이퍼레퍼런스
+페이지가 변한다 -하이퍼
+참조한다 -레퍼런스
+외부링크 도메인 주소를 입력할 때는 반드시 http 필요함
+
+2. target 속성 - 브라우저 창을 제어하는 것
+_self    현재창
+_blank  새창
+
+내 사이트에서 외부 사이트로 이용시 사용함
+내가 포트폴리오 만들 때 필요한 기능
+
+도메인 주소는 다 다르다. (집주소 또는 전화번호 같은 거)
+127.0.0.1 자기 컴퓨터 주소 개발자들이 쓰는 로컬 서버 주소.
+웹사이트 개발하기 위해 사용
+내 컴퓨터를 서버로 접속 가능
+
+폴더 안에 index.html을 브라우저가 기본적으로 찾는다. 약속임
+도메인 특정 폴더를 주소로 바꾼 것.
+
+./ -> 자기 방. 
+
+<a href="./page1.html">자기소개</a>
+파일 작성한 기준 (상대 경로)->개발자만 안다.
+상대 경로가 사용하기 편하다
+
+<a href="http://127.0.0.1:5500/site/page1.html">자기소개</a> 
+최상위, 절대 경로, 서버(도메인)부터 시작
+
+   <a href="./index.html">홈으로</a>
+    <a href="./page1/page1.html">자기소개</a> 
+ 
+<a href="../index.html">홈으로</a>
+../ ->내폴더보다 상위 폴더
+
+   <a href="../index.html">홈으로</a>
+    <a href="./page1.html">자기소개</a>
+    <a href="../page2/page2.html">갤러리</a>
+
+최상위 - 루트경로 
+서버의 최상위 경로를 찾는다. 서버가 실행되는 폴더, 루트폴더 -> /
+
+외부링크 external
+
+내부링크 internal
+href 버튼 name 목적지 둘다 a로 사용
+
+# -> 현재 페이지 (임시 링크)
+
+<style>
+    html{
+      scroll-behavior: smooth;
+    }
+  </style>
+
+내부링크</h1>
+  <hr>
+    <h2><a name="목차1">목차</a></h2>
+    <ul>
+      <li><a href="#chap1">chapter1</a></li>
+      <li>chapter2</li>
+      <li>chapter3</li>
+    </ul>
+  <hr>
+
+br*100 하고 tab키 누르기 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   
+
+      <h2><a name="chap1">chapter1</a> <a href="#목차1">top</a></h2>
+
+(br{챕터1})*100 쓰고 tab키 누르기
+<br>챕터1</br><br>챕터1</br><br>챕터1</br><br>챕터1</br><br>챕터1</br><br>챕터1</br><br>챕터1</br><br>챕터1</br>
+
+----------------------------
+폴더를 만든다.
+폴더관리를 하는 편
+
+<img class="naver1" src="./img/naver.jpg" alt>
+img
+1. src - 출력할 이미지 어디 있냐
+2. alt 얼터네이트, 보조키, 안 쓰면 오류남.
+보조의 뜻, 대체 문자
+이미지를 읽어줄 것을 집어 넣어라.
+웹접근성 때문에 (기업성이 부족, 사용하는 곳 : 국방부, 은행,공공기관 등)
+웹 스탠다드 - 문법
+
+쓰기 싫으면 비워 놓는다. alt="" 또는 alt로 적긴 해야 한다.(웹표준은 지켜야 한다)
+
+레이티오 ratio 이미지 비율 
+이미지가 깨지게 되면 안 된다.
+이미지 사이즈 조정하려면 넓이나 높이 하나만 입력하면 자동으로 크기 조절함
+작은 이미지는 크게 키우면 깨진다.
+고해상도(큰 이미지)로 사용하는 게 좋음, 그런데 용량이 너무 커짐.
+해상도는 높은데 용량은 줄여야 한다.
+border 테두리:선두께 선모양 색;
+기본값 3개 넣어야한다. 두께, 모양, 색깔)
+
+커버 - 꽉 덮어버린다. 이미지가 잘린다
+컨테인 - 쏙 들어간다. 불필요한 여백이 생김
+
+object-fit: cover;
+object-fit: contain;
+object-position: center;
+오브젝트 핏을 사용했을 때 오브젝트 포지션 사용해야 함
+
+background css에서 사용하는 배경색 지정 
+가급적 사용 자제
+
+css에서
+
+수평 X선
+수직 Y선
+수평값을 먼저 쓰고 수직값을 쓴다.
+같을 때만 center center 하나로 쓸 수 있다. center일 때만 사용
+
+컴퓨터는 단위가 중요하다 
+무조건 단위를 적어야 한다
+px 픽셀이 가장 작은 기본단위.
+0은 단위를 적지 않는다
+숫자 하나만 적으면 x축을 말한다. 
+background-position: 50px; //50px center
+
+background-position: x축값 y축값;
+
+
+.box1{
+  width: 200px;
+  height: 200px;
+  background-color: #EEE;
+  background-image: url(../img/bg2.jpg) , url(../img/bg1.jpg);
+  background-repeat: repeat-y , repeat-x;
+  background-position: center center, 0 bottom;
+}
+
+배경 이미지 1개 이상 사용할 수 있다
+
+background-size: ;
+background-size: auto 100px;
+background-size: 100px;
+
+자동으로 비례를 맞춘다 background에서 auto는.
+
+----------------------------
+목록
+비슷한 것을 그룹화할 때 사용함
+ul
+99%는 ul
+ol
+검색어 순위 
+연혁
+순서 정해야 할 때 사용 시맨틱 구조 설계
+
+dl (Definition List)
+정의하다, 설명하다
+용어 정리할 때, 사전 만들 때 사용한다
+회사정보 만들 때 많이 사용한다
+dl 안에는 
+dt와 dd 밖에 못 들어온다. 자식으로
+타이틀, 
+
+에이전트 스타일
+브라우저에서 초기값을 주는 
+
+css에서
+:: -가상 엘리먼트, css로 태그를 집어 넣는 것.
+가상 요소 
+보이지 않는 태그를 만든다.
+해당 엘리먼트의 가장 앞쪽이나 뒤쪽에 만들 수 있다
+짝퉁 태그
+디자인 수정 관리 때문에 이용함
+시멘틱 의미의 접근성 때문에 사용
+::before
+::after
+가상 엘리먼트 사용 후
+반드시 content가 들어가야 한다.
+
+.ex1 li::before{
+  content: '- ';
+}
+
+.ex1 li::after{
+  content: '- ';
+}
+
+----------------------------
+table - 무조건 관계형 데이터베이스  (관계형 자료)
+block레벨과 아주 유사하다.
+
+자료 -데이터 베이스
+관계형 데이터베이스
+비관계형 데이터베이스
+필드셋
+레코드 -실제 데이터, tr
+td - 테이블 셀, 구조가 다르다.
+
+.table1{
+  border-collapse: collapse;
+}
+border-collapse 하나로 뭉치다
+오로지 테이블에만 사용할 수 있다.
+
+table{
+  border-collapse: collapse;
+}
+모든 테이블 만들 때 써 놓고 시작함.
+
+vertical-align: ;
+원래는 글자들끼리의 관계인데, (글자들끼리 정렬)
+오로지 td는 안쪽의 이야기를 말한다!!
+
+td - 셀
+
+셀의 합병
+x축, y축
+항상 축이 있다.
+칸 컬럼 (col)
+줄 row
+span 확장 늘어난다
+colspan 왼쪽 기준으로 병합된다(칸, 가로)
+
+        <tr><!-- row 1 -->
+          <td colspan="2">1</td>
+          <!-- <td>2</td> -->
+          <td>3</td>
+        </tr>
+
+ rowspan 위쪽 기준으로 병합된다(줄, 세로)
+
+ <table class="table1">
+        <tr><!-- row 1 -->
+          <td colspan="2">1</td>
+          <!-- <td>2</td> -->
+          <td rowspan="2">3</td>
+        </tr>
+        <tr><!-- row 2 -->
+          <td>1</td>
+          <td>2</td>
+          <!-- <td>3</td> -->
+        </tr>
+        <tr><!-- row 3 -->
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+      </table>
+
+셀의 합병
+
+----------------------------
+관계형데이터는 엑셀과 같다
+
+표의 제목을 넣을 때는 caption을 사용해야 함.
+테이블에서만 caption 사용할 수 있다.
+
+vertical-align으로 표 안의 글자 정렬 (위, 아래, 가운데)
+
+td 테이블 데이터 약자
+th -table head, 데이터를 읽기 전에 먼저 읽어라, 필드 네임
+
+th는 기본 가운데 정렬이 됨
+
+th에는 반드시 scope 속성이 들어가야 함
+th scope="row"
+th 사용시 반드시 사용해야 함
+col, y축
+row, x축
+
+tbody 무조건 써야 한다.
+table data 데이터가 있는 부분.
+
+tr은 반드시 tbody로 감싸야 한다.
+
+th는 thead로 감싸야 한다.
+
+thead 자식 tr, tr의 자식 th
+tbody 자식 tr, tr의 자식 td
+
+갯수를 무조건 맞춰줘야 한다.
+
+th는 무조건 한 방향만 쓸 것. 권장사항이다.
+
+html 중요한 요소
+목록
+제목
+섹션
+아티클
+테이블
+폼
+
+rowgroup  th를 읽기 전에 묶어주는 거 
+
+가상클래스가 우선 순위이다.
+
+.table2 td{
+  width: 100px;
+}
+
+.table2 td:first-child ~ *{
+  width: 100px;
+}
+
+
+.table2 th[scope='rowgroup']
+[] 속성을 적을 때 사용
+
+----------------------------
+폼은 block 레벨이다.
+회원가입 양식 
+레전드는 필드셋의 제목
+필드셋은 폼 내에서 의미적으로 구획을 나눈 것.
+데이터베이스 처리하기도 편하다
+
+br은 잘 쓰지 않는다.
+p로 묶는다. (관례)
+
+참조  label로 감싸야 한다.
+label -input 요소에 대한 참조
+입력값의 참조할 내용
+input과 연결해야 함
+
+<label for="id1">id</label> : <input id="id1" type="text">
+for 와 id
+입력양식에는 id 속성을 넣어주고
+label에는 for을 넣는다.
+
+input 하나당 label은 무조건 하나다.
+
+placeholder=""추가 안내문
+안내 멘트
+타입에 따라 넣을 수도 있고 못 넣을 수도 있다.
+글자를 입력할 수 있는 input 속성에만 사용 가능.
+
+시멘틱 - 컴퓨터를 이해시키는 것.
+
+size="15" 크기
+좋은 방법은 아님, 정확한 크기가 안 들어감
+글자 입력할 수 있는 것에만 사용 가능
+
+
+5대 브라우저
+표준 브라우저 
+-크롬, 엣지, 사파리, fire fox, 오페라
+똑같은 모양이 나오게 만들어야 함.
+
+crossing browser - 똑같은 모양의 결과를 출력 
+크로스 브라우징
+
+maxlength="5"
+5글자만 입력할 수 있다.
+
+name속성 폼요소 전부 다 줄 수 있다.
+옛날에는 자바스크립트에서 값을 찾기 위해 사용함
+언어에 따라 다르다.
+
+title="" 모든 접근성을 위해 사용(웹 접근성 편하게 하기 위해)
+
+타이틀이 있는 경우 label 사용 안 함.
+
+데이터가 전송이 됐다.
+폼 안에 버튼이 있어야 한다.
+폼으로 감싸면 버튼은 실제 전송 버튼이 된다. 새로고침이 된다.
+
+
+        <p>
+          <button>버튼</button>
+          <button type="reset">다시작성하기</button>
+        </p>
+
+화면만 다시 글자를 지워버리는 기능 reset
+<button type="submit">전송하기</button>
+submit 기능이 생략되어 있음 기본적으로.
+폼 안에서는 서브밋 기능이 생략
+정보를 날리고 새로고침 
+
+<button type="button">가입시확인사항</button>
+폼 바깥에서 
+스크립트 사용할 목적으로 사용
+
+autocomplete="on"
+자동완성
+name을 꼭 써야 한다.
+
+보안상 off를 사용하라고 함
+
+레이블로 감싸는 이유.
+숨기고 싶을 때
+
+레이블 기능상 도움이 많이 된다
+레이블은 인라인 레벨이다, 크기 지정 할 수 없다.
+사용자한테 인터페이스를 좀 더 편하게 사용하기 위해.
+
+필드셋, 폼 - 블럭 레벨
+
+input type="checkbox"
+여러개 체크할 때 사용
+input type="radio"
+한개 선택할 때 사용
+
+html과 css를 같이 생각해서 만들어야 함.
+
+option 안에 label 속성값으로 사용
+텍스트를 대체
+
+----------------------------
+input file
+multiple 여러개 파일 올리는 거, 값이 없는 거 
+accept="" 수용하다. 어떤 파일만 업로드 해라. 종류를 지정할 수 있다.
+mime type 
+
+블링속성 =""
+
+<input type="email">
+유효성 검사를 자동으로 제공. 
+유저 인터페이스를 편하게 사용할 수 있는 목적.
+size 속성 사용 가능
+maxlength속성 사용 가능하나 쓰지는 않는다.
+
+<input type="number">
+size속성 안 됨, maxlength속성 안 됨.
+step속성 사용 가능함.
+
+<input type="number" min="0", max="9">
+min=""입력 범위 최소
+max=""입력 범위 최대
+
+반드시 form 안에서만 실행이 된다.
+값을 전송할 때만 사용된다.(유효성, 미니멈맥스 등)
+전송하는 기능은 백엔드에서 함.
+
+<input type="tel">
+전화번호, 키패드가 나올 뿐.
+ui 사용자 환경
+ui에만 영향을 준다.
+pc에는 상관없음
+size속성, maxlength속성 사용 가능함.
+
+size속성, maxlength속성 사용 가능함.(number만 안 됨)
+
+label 대신 title 사용 가능
+
+<input type="date">
+생년월일, 날짜 고를 수 있게 달력이 나옴.
+
+<input type="range">
+드래그 해서 사용.
+min, max 속성 사용 가능
+<input type="range" min="100" max="300">
+스크립트로 가져온다.
+<input type="range" min="100" max="300" step="10">
+step 한단계씩 키보드로 움직일 수 있는 것.
+
+스크립트에서 change 이벤트 사용해서 값을 가져온다.
+
+number, range
+min,max,step 속성사용 가능
+
+<textarea name="" id="" cols="30" rows="10"></textarea>
+여백 남기지 말기
+안쪽 여백을 글자로 인식하기 때문에.
+리사이징이 가능하다.(사이즈 조절)
+css로 사이즈 조절해야 함.
+textarea{
+  resize: none;
+}
+none 못 움직이게 함.
+호라이즌 수평
+버티컬 수직
+
+cols, rows 
+크기가 정확히 안 맞는다. 크로스 브라우징이 안 된다.
+
+checked 블링 
+
+select option에서 selected 속성 사용할 수 있다.(기본값 설정)
+
+<select name="" id="id5" multiple size="2">
+select에 사용할 수 있다.
+multiple '전부 다 보여준다'와 size '몇 칸 보여준다.'
+
+----------------------------
+syntax 
+문법규칙(꼭 지켜야 한다)
+kldp 유효성 검사(markup 검증 서비스)
+즐겨찾기 해서 사용하기
+노란색 경고 확인하기
+빨간색 뜨면 꼭 고쳐야 함
+p, div - block 레벨
+span - inline 레벨
+figcaption(접근성 차원에서 만들어진 것)
+style은 head 안에서만 사용할 수 있다.
+
+
+권장사항(노란색 경고가 뜬다)
+
+AOA11Y -유튜브 영상
+
+
+
+<h1>syntax rule</h1>
+    <p>kldp html 유효성(validator)검사를 이용해 확인해 볼 것</p>
+    <section>
+      <h2>문법규칙</h2>
+      <ul>
+        <li>
+          inline요소의 자식으로는 block요소는 허락되지 않는다
+          예외 : a는 (interactive를 제외한) 모든요소의 부모로 허락됨
+        </li>
+        <li>heading요소(h1~h6), p요소의 자식으로는 인라인(인라인, 인라인-블럭)계열만 허락된다</li>
+        <li>interactive요소(폼요소,anchor(a)) 간에는 부모자식관계가 허락되지 않는다(상호작용 요소끼리는 안 된다)</li>
+        <li>figcaption의 자식으로는 a요소가 허락되지 않는다</li>
+        <li>ul, ol의 자식으로는 li만 허락된다</li>
+        <li>li의 자식으로는 모든요소가 허락된다</li>
+        <li>dl의 자식으로는 dt,dd요소만 허락된다</li>
+        <li>style,meta,title요소는 head의 자식요소로만 허락된다</li>
+        <li>img요소는 alt속성을 가져야만 한다</li>
+      </ul>
+    </section>
+    <section>
+      <h2>권장사항</h2>
+      <ul>
+        <li>heading요소는 텍스트를 포함하길 권장</li>
+        <li>h1과 main요소는 웹문서에 한개씩 포함하길 권장</li>
+        <li>main,section,article요소는 heading요소를 한개 이상 포함하길 권장</li>
+        <li>heading요소는 순차적으로 적용하길 권장</li>
+        <li>title값은 page마다 다르게 출력하길 권장</li>
+        <li>WAI-ARIA(접근성)규칙을 준수하길 권장</li>
+
+
+----------------------------
+iframe
+<iframe src="" frameborder="0"></iframe>
+frameborder="0" 요즘 사용하면 안 됨
+모양은 무조건 css로 해라!
+
+1. 유튜브 퍼올 때 사용함
+2. 구글맵, 네이버 지도 퍼올 때 사용함
+
+유튜브 퍼오는 이유
+데이터 절약하는 목적
+
+iframe과 image의 차이
+원래 이미지는 넓이만 주면 알아서 늘어나는데 유튜브는 그게 안 됨
+비디오는 됨
+
+iframe은 가로세로 비율이 자동으로 안 맞는다.
+
+
+padding과 margin은 상하(위아래)를 %로 줬을 때 
+높이와 상관없이 넓이 기준으로 들어간다 
+정사각형 만드는 유일한 방법
+% 쓰면 무조건 부모 넓이 기준 (상하좌우)
+
+
+유튜브 비율 
+(315/560)*100
+
+------------------------------------
+

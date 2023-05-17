@@ -1,0 +1,6 @@
+.ex1 li{
+  list-style: none;
+}
+.ex1 li::after{
+  content: '- ';
+}
