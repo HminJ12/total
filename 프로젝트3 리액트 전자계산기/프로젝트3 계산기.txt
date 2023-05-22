@@ -315,3 +315,30 @@ new Date 내장객체에 안에 함수도 들어있고 다른 것들도 들어�
 
 onTransitionEnd={}트랜지션이 끝났을 때 할 일
 
+-----------------------------
+input에서 submit이벤트가 실행되서 
+type button을 속성에 적으면
+
+온키다운 이벤트가 있으나 핸드폰에서는 엔터키가 없기 때문에 의미가 없어서 사용하지 않는다.
+
+
+정규식은 빽슬러시를 사용하면 안 된다.
+
+includes 처음에 한번 검사하면 끝난다
+정규식 matches는 
+
+
+
+디플로이 방법
+패키지 제이슨에서 입력하고
+"homepage":"/react/calc",
+
+
+index.js에서 입력하기
+BrowserRouter basename='/calc'
+새로고침할 때 에러나서 HashRouter로 변경함
+
+  <HashRouter>
+    <App />
+  </HashRouter>
+
