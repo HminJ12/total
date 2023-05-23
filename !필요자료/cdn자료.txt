@@ -96,3 +96,9 @@ json파일에 붙여넣기 하기 (사스 글자크기 줄이는 거)
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 font-family: 'Orbitron';
+
+
+Raleway 폰트------------------------
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+font-family: 'Raleway', sans-serif;
