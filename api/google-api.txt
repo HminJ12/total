@@ -64,6 +64,40 @@
           console.log("주소를 못 가지고 왔습니다");
         }
       });
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+■ Time Zone API
+
+api 작성방식
+  https://maps.googleapis.com/maps/api/timezone/json
+    ?location=39.6034810%2C-119.6822510
+    &timestamp=1331161200
+    &key=YOUR_API_KEY
+    
+  -결과값
+  {
+   "dstOffset" : 0,
+   "rawOffset" : -28800,
+   "status" : "OK",
+   "timeZoneId" : "America/Los_Angeles",
+   "timeZoneName" : "Pacific Standard Time"
+  }
+
+    주소창에 입력 후, 내 구글 api 키를 바꾸고 엔터를 친다.
+    timezoneID가 나와야 한다.
+
+    -moment 라이브러리와 연동
+    npm i moment
+    npm i moment-timezone
+  
+    import moment from "moment-timezone";
+
+    예시1 : moment(timestamp).format('YYYY-MM-DD, HH:mm:ss')
+    예시2 : moment('2023-05-04').format('Y년M월D일, H시m분s초') H는 절대시간 18시 이런 식으로 
+    예시3 : moment(Date.now()).tz('America/Los_Angeles').format('Y년M월D일, hh시mm분ss초 A') h는 06시 이렇게 나온다 A는 am,pm 나오는 거
+    예시4 : moment(Date.now()).tz('America/Los_Angeles').format('Y년M월D일, hh시mm분ss초 dddd A') dddd는 요일이 영어로 나온다
+    예시5 : moment().day() //요일을 숫자로 리턴
+    moment().valueOf(), moment().unix() //타임스탬프 
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////      
 ■ 유튜브 API
   ● 라이브러리 페이지로 이동
