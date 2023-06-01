@@ -16,6 +16,11 @@ head link로
 css에서
 font-family: 'Noto Sans KR', sans-serif;
 
+노토산스 serif------------------------------------------------
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+font-family: 'Noto Serif KR', serif;
+
 
 Montserrat (영어폰트) --------------------------------------
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
