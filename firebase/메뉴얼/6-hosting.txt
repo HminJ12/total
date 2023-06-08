@@ -1,0 +1,17 @@
+npm run build
+npm i -g firebase-tools //컴퓨터 전체에 설치된 거라 다음에 설치할 필요가 없다
+firebase login //터미널 명령어
+firebase init (hosting선택)
+use an existing project
+project선택
+배포폴더 입력 (build) build 입력
+single page 옵션 선택 (y,n) y
+깃허브 자동 빌드 선택 (y,n) n
+index.html 생성 후 덮어쓰기 옵션 (y,n) n
+firebase deploy
+hosting url 확인
+콘솔/빌드/호스팅 상세내역 확인
+재배포 (npm run build, firebase deploy)
+
+
+npm uninstall firebase-tools 
