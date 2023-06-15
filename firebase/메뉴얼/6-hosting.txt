@@ -1,16 +1,20 @@
+콘솔의 빌드메뉴에서 호스팅 누르고 시작하기(단계별 설정 완료)
+
 npm run build
 npm i -g firebase-tools
 권한허용 y
 firebase login
-firebase init (hosting선택)
+firebase init (y후,firebase hosting선택 hosting선택할 때 스페이스바로 선택 후 엔터)
 use an existing project
-project선택
+해당 project선택
 배포폴더 입력 (build)
-single page 옵션 선택 (y,n)
-깃허브 자동 빌드 선택 (y,n)
-index.html 생성 후 덮어쓰기 옵션 (y,n)
+single page 옵션 선택 (y,n) y
+깃허브 자동 빌드 선택 (y,n) n
+index.html 생성 후 덮어쓰기 옵션 (y,n) n
 firebase deploy
 hosting url 확인
 콘솔/빌드/호스팅 상세내역 확인
 재배포 (npm run build, firebase deploy)
 
+
+수정 후 빌드하고 난 후에 firebase deploy만 입력하면 된다(터미널에서)
